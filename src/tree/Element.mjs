@@ -623,10 +623,18 @@ export default class Element {
         }
 
         if (sourceChanged) {
+            const texture = this.__displayedTexture;
             if (this.__displayedTexture) {
-                this.emit('txLoaded', this.__displayedTexture);
+                // Emitting directly causes recursion limit when
+                // texture source is accessed from within its callback.
+                // https://github.com/rdkcentral/Lightning/issues/447
+                setTimeout(() => {
+                    this.emit('txLoaded', texture);
+                });
             } else {
-                this.emit('txUnloaded', this.__displayedTexture);
+                setTimeout(() => {
+                    this.emit('txUnloaded', texture);
+                });
             }
         }
     }
