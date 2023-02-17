@@ -11,7 +11,7 @@ You can use various properties to control the way in which you want to render te
 | Name | Type | Default | Description |
 |---|---|---|---|
 | `text` | String | '' | Text to display |
-| `fontFace` | String or String[] | null | Font family used for current text |
+| `fontFace` | String or String[] | null | Font family used for current text. If an array is provided, font familes that appear later in the array will be used as fallbacks. |
 | `fontSize` | Integer | 40 | Font size |
 | `fontStyle` | String | 'normal' | Font style |
 | `lineHeight` | Integer | null | Line height |

@@ -97,6 +97,9 @@ declare namespace TextTexture {
     /**
      * Font family
      *
+     * @remarks
+     * If an array is provided, font familes that appear later in the array will be used as fallbacks.
+     *
      * @defaultValue `null` (uses {@link Stage.Options.defaultFontFace})
      */
     fontFace?: string | string[] | null;
